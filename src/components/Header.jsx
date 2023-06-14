@@ -20,7 +20,7 @@ const Header = ({text, setText, clickHandler}) => {
           </div>
           <input
             type="text"
-            placeholder="Search a github username"
+            placeholder="Search Github username"
             value={text}
             onChange={(e) => setText(e.target.value)}
             className="bg-darkBlueBg  w-full outline-0 py-4 px-16 rounded-lg text-white"
