@@ -11,7 +11,7 @@ const Main = ({ getUser }) => {
     <div>
       {getUser.map((user, index) => {
         return (
-          <div key={index} className="bg-darkBlueBg px-5 p-3">
+          <div key={index} className="bg-darkBlueBg px-5 p-3 mt-5 rounded-xl">
             <div className="flex items-center gap-12 ">
               <div className=" ">
                 <img
@@ -57,7 +57,7 @@ const Main = ({ getUser }) => {
             </div>
             <div className="my-2">
             {user.blog ? <img src={link} className="h-7" alt="" /> : <img  src={link1} className="h-7" alt=""/>}
-              <p></p>
+              {user.blog ? <a href={user.blog} target= "_blank" className="text-white">{user.blog}</a> : <p className="text-white">not available</p>}
             </div>
             <div className="my-2">
               {user.twitter_username ? <img src={twitter} className="h-7" alt="" /> : <img  src={twitter1} className="h-7" alt=""/>}
