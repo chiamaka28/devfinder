@@ -66,7 +66,11 @@ const Main = ({ getUser }) => {
                 <img src={link1} className="h-7" alt="" />
               )}
               {user.blog ? (
-                <a href={user.blog} target="_blank" className="text-white cursor-pointer">
+                <a
+                  href={user.blog}
+                  target="_blank"
+                  className="text-white cursor-pointer"
+                >
                   {user.blog}
                 </a>
               ) : (
@@ -79,7 +83,11 @@ const Main = ({ getUser }) => {
               ) : (
                 <img src={twitter1} className="h-7" alt="" />
               )}
-              {user.twitter_username ? <p className="text-white">{user.twitter_username}</p> : <p className="text-white">Not Available</p>}
+              {user.twitter_username ? (
+                <p className="text-white">{user.twitter_username}</p>
+              ) : (
+                <p className="text-white">Not Available</p>
+              )}
             </div>
             <div className="my-2 flex gap-3 items-center">
               {user.company ? (
@@ -87,7 +95,11 @@ const Main = ({ getUser }) => {
               ) : (
                 <img src={company1} className="h-7" alt="" />
               )}
-             {user.company ? <p className="text-white">{user.company}</p> : <p className="text-white">Not Available</p>}
+              {user.company ? (
+                <p className="text-white">{user.company}</p>
+              ) : (
+                <p className="text-white">Not Available</p>
+              )}
             </div>
           </div>
         );

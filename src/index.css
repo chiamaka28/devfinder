@@ -5,3 +5,9 @@
 .my-container {
   @apply w-[90%] mx-auto max-w-[800px];
 }
+
+@layer base {
+  html {
+    font-family: "Comforter", sans-serif;
+  }
+}
