@@ -5,11 +5,13 @@ import { useState } from "react";
 
 
 function App() {
+  const [placeHolder, setPlaceHolder] = useState(true)
   const [text, setText] = useState("");
   const [getUser, setGetUser] = useState([]);
 
 
   async function handleSearch() {
+    setPlaceHolder(false)
     const response = await fetch(
       `https://api.github.com/users/${text}`
     );
@@ -36,7 +38,7 @@ function App() {
     <div className="bg-slate-900 min-h-screen ">
       <div className="my-container">
         <Header text={text} setText={setText} clickHandler={clickHandler}/>
-        <Main text={text} getUser={getUser} />
+        <Main text={text} getUser={getUser} placeHolder={placeHolder}/>
       </div>
     </div>
   );

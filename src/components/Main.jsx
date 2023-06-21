@@ -1,3 +1,4 @@
+
 import location from "../assets/location.png";
 import location1 from "../assets/location1.png";
 import link from "../assets/link.png";
@@ -6,9 +7,10 @@ import twitter from "../assets/twitter.png";
 import twitter1 from "../assets/twitter1.png";
 import company from "../assets/company.png";
 import company1 from "../assets/company1.png";
-const Main = ({ getUser }) => {
+const Main = ({ getUser , placeHolder}) => {
   return (
     <div>
+      {placeHolder ? <div className="flex justify-center items-center mt-[200px] font-extrabold text-2xl md:text-3xl"><h2 className="text-white">Search  A GitHub User</h2></div> : ""}
       {getUser.map((user, index) => {
         return (
           <div key={index} className="bg-darkBlueBg px-5 p-3 mt-5 rounded-xl">
@@ -28,23 +30,23 @@ const Main = ({ getUser }) => {
             </div>
             <div>
               {user.bio ? (
-                <p className="text-white">{user.bio}</p>
+                <p className="text-white p-3">{user.bio}</p>
               ) : (
-                <p className="text-white">this user didnt add a bio</p>
+                <p className="text-white p-3">this user didnt add a bio</p>
               )}
             </div>
-            <div className="text-white flex justify-center gap-12 items-center bg-slate-900 my-5 py-6 rounded-lg">
-              <div className="flex justify-center items-center flex-col">
+            <div className="text-white bg-slate-900 my-5 py-6 rounded-lg flex justify-center items-center gap-6">
+              <div className="text-center">
                 <h5>Repos</h5>
-                <p>{user.public_repos}</p>
+                <p className=" font-bold text-lg md:text-2xl">{user.public_repos}</p>
               </div>
-              <div className="flex justify-center items-center flex-col">
+              <div className="text-center">
                 <h5>Followers</h5>
-                <p>{user.followers}</p>
+                <p className=" font-bold text-lg md:text-2xl">{user.followers}</p>
               </div>
-              <div className="flex justify-center items-center flex-col">
+              <div className="text-center">
                 <h5>Following</h5>
-                <p>{user.following}</p>
+                <p className=" font-bold text-lg md:text-2xl">{user.following}</p>
               </div>
             </div>
             <div className="my-2 flex gap-3 items-center">
