@@ -38,15 +38,15 @@ const Main = ({ getUser , placeHolder}) => {
             <div className="text-white bg-slate-900 my-5 py-6 rounded-lg flex justify-center items-center gap-6">
               <div className="text-center">
                 <h5>Repos</h5>
-                <p className=" font-bold text-lg md:text-2xl">{user.public_repos}</p>
+                <p className=" font-bold text-lg md:text-3xl">{user.public_repos}</p>
               </div>
               <div className="text-center">
                 <h5>Followers</h5>
-                <p className=" font-bold text-lg md:text-2xl">{user.followers}</p>
+                <p className=" font-bold text-lg md:text-3xl">{user.followers}</p>
               </div>
               <div className="text-center">
                 <h5>Following</h5>
-                <p className=" font-bold text-lg md:text-2xl">{user.following}</p>
+                <p className=" font-bold text-lg md:text-3xl">{user.following}</p>
               </div>
             </div>
             <div className="my-2 flex gap-3 items-center">
