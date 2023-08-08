@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
@@ -8,7 +8,7 @@ function App() {
   const [placeHolder, setPlaceHolder] = useState(true)
   const [text, setText] = useState("");
   const [getUser, setGetUser] = useState([]);
-
+  const [theme, setTheme] = useState(null);
 
   async function handleSearch() {
     setPlaceHolder(false)
@@ -35,9 +35,9 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-900 min-h-screen ">
+    <div className="bg-slate-900 min-h-screen light:bg-white">
       <div className="my-container">
-        <Header text={text} setText={setText} clickHandler={clickHandler}/>
+        <Header text={text} setText={setText} clickHandler={clickHandler} />
         <Main text={text} getUser={getUser} placeHolder={placeHolder}/>
       </div>
     </div>

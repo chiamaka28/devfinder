@@ -9,7 +9,7 @@ const Header = ({text, setText, clickHandler}) => {
           <h1 className="font-['Abril Fatface'] text-white text-4xl">
             devfinder
           </h1>
-          <div className="flex gap-4 justify-center items-center">
+          <div className="flex gap-4 justify-center items-center" >
             <h3 className="text-white">Light</h3>
             <img className="h-8" src={sun} alt="" />
           </div>

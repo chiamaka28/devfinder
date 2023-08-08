@@ -10,7 +10,7 @@ import company1 from "../assets/company1.png";
 const Main = ({ getUser , placeHolder}) => {
   return (
     <div>
-      {placeHolder ? <div className="flex justify-center items-center mt-[200px] font-extrabold text-2xl md:text-3xl"><h2 className="text-white">Search  A GitHub User</h2></div> : ""}
+      {placeHolder ? <div className="flex justify-center items-center mt-[200px] font-extrabold text-2xl md:text-4xl"><h2 className="text-white">Search  A GitHub User</h2></div> : ""}
       {getUser.map((user, index) => {
         return (
           <div key={index} className="bg-darkBlueBg px-5 p-3 mt-5 rounded-xl">
