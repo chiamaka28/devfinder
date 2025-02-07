@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Main from './components/Main';
 import { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 function App() {
   const [placeHolder, setPlaceHolder] = useState(true);
   const [text, setText] = useState('');
@@ -23,7 +24,7 @@ function App() {
       }
       const data = await response.json();
       setGetUser([data]);
-      console.log(data);
+      setText('');
       return data;
     } catch (error) {
       setText('');
@@ -49,23 +50,25 @@ function App() {
     }
   };
   return (
-    <div className='bg-slate-900 min-h-screen light:bg-white'>
-      <div className='my-container'>
-        <Header
-          text={text}
-          setText={setText}
-          clickHandler={clickHandler}
-          handleKeyDown={handleKeyDown}
-        />
-        <Main
-          text={text}
-          getUser={getUser}
-          placeHolder={placeHolder}
-          error={error}
-          loading={loading}
-        />
+    <ThemeProvider>
+      <div className='bg-whitish-blue dark:bg-dark-navy-blue min-h-screen light:bg-white'>
+        <div className='my-container'>
+          <Header
+            text={text}
+            setText={setText}
+            clickHandler={clickHandler}
+            handleKeyDown={handleKeyDown}
+          />
+          <Main
+            text={text}
+            getUser={getUser}
+            placeHolder={placeHolder}
+            error={error}
+            loading={loading}
+          />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
