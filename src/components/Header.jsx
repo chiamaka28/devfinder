@@ -1,6 +1,6 @@
 import search from '../assets/search.png';
 
-const Header = ({ text, setText, clickHandler }) => {
+const Header = ({ text, setText, clickHandler, handleKeyDown }) => {
   return (
     <div>
       <div>
@@ -19,7 +19,7 @@ const Header = ({ text, setText, clickHandler }) => {
             </svg>
           </button>
         </div>
-        <div className='relative my-4'>
+        <form onSubmit={clickHandler} className='relative my-4'>
           <div className='absolute  top-3 left-4'>
             <img className='h-8' src={search} alt='' />
           </div>
@@ -28,15 +28,16 @@ const Header = ({ text, setText, clickHandler }) => {
             placeholder='Search Github username'
             value={text}
             onChange={(e) => setText(e.target.value)}
+            onKeyDown={handleKeyDown}
             className='bg-darkBlueBg  w-full outline-0 py-4 px-16 rounded-lg text-white'
           />
           <button
-            onClick={clickHandler}
+            type='submit'
             className='bg-blue text-white py-3 px-4 absolute rounded-lg  top-1 right-1'
           >
             Search
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );

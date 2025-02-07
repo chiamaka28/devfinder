@@ -6,8 +6,10 @@ import twitter from '../assets/twitter.png';
 import twitter1 from '../assets/twitter1.png';
 import company from '../assets/company.png';
 import company1 from '../assets/company1.png';
+import { BeatLoader } from 'react-spinners';
+import { css } from '@emotion/react';
 
-const Main = ({ getUser, placeHolder, error }) => {
+const Main = ({ getUser, placeHolder, error, loading }) => {
   function formatJoinDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const date = new Date(dateString);
@@ -23,10 +25,26 @@ const Main = ({ getUser, placeHolder, error }) => {
       )}
       {error && (
         <div className='flex justify-center items-center mt-[200px] font-extrabold text-2xl md:text-3xl'>
-          <h2 className='text-white'>
+          <h2 className='text-white text-center'>
             Oops! That doesn't seem right. Try another username.
           </h2>
         </div>
+      )}
+
+      {loading ? (
+        <div className='flex justify-center items-center mt-[200px]'>
+          <BeatLoader
+            css={css`
+              display: block;
+              margin: 0 auto;
+            `}
+            size={24}
+            color={'#FFFFFF'}
+            loading={loading}
+          />
+        </div>
+      ) : (
+        ''
       )}
       {getUser.map((user, index) => {
         return (
